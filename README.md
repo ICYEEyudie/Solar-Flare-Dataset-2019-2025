@@ -18,6 +18,13 @@ The original `hmi.sharp_720s` data series has a 720-second cadence. In this repo
 
 This dataset should be regarded as a curated and sampled subset of the official HMI SHARP data rather than a replacement for JSOC.
 
+## Dataset Download
+
+The label CSV file is available in the GitHub Release:
+
+- `flare_labels_M1_from_noaa_events.csv`: binary labels for M1.0+ flare prediction within 48 hours.
+
+
 ## Dataset Coverage
 
 - Time range: `2019-01-26` to `2025-12-30`

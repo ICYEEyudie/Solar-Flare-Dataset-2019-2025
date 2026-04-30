@@ -77,7 +77,7 @@ Example:
 hmi.sharp_720s.7334.20190126_000000_TAI.magnetogram.fits
 hmi.sharp_720s.7334.20190126_013600_TAI.magnetogram.fits
 ```
-
+![Example of adjacent magnetogram records from the same active region](assets/Versus.png)
 Adjacent records from the same active region are sampled approximately every 96 minutes in this dataset. Different active regions may have different spatial sizes, so users should resize, pad, crop, or interpolate images before training image-based deep learning models.
 
 ### Daily Metadata CSV Files

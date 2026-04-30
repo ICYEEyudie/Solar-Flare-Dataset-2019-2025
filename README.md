@@ -38,9 +38,9 @@ Note: The original `hmi.sharp_720s` series has a 720-second cadence, while this 
 Solar-Flare-Dataset-2019-2025/
 ├── README.md
 ├── scripts/
-│   ├── download_hmi_sharp.py
-│   ├── build_flare_labels.py
-│   └── fits_to_png.py
+│   ├── download.py
+│   ├── build_labels.py
+│   └── convert.py
 ├── magnetogram/
 │   ├── 20190126/
 │   │   ├── hmi.sharp_720s.7334.20190126_000000_TAI.magnetogram.fits

@@ -82,39 +82,11 @@ Adjacent records from the same active region are sampled approximately every 96 
 
 ### Daily Metadata CSV Files
 
-Each daily CSV file is generated from the JSOC query result for one day. Each row corresponds to one SHARP record indexed mainly by `T_REC` and `HARPNUM`.
+Each daily CSV file is generated from the JSOC query results of the `hmi.sharp_720s` data series. These CSV files are metadata tables rather than flare-label files. Each row corresponds to one SHARP observation record, mainly identified by `HARPNUM` and `T_REC`.
 
-Example file:
+The CSV files contain observation time, active-region identifiers, data-quality flags, the corresponding `magnetogram` segment path, and selected SHARP magnetic parameters such as `USFLUX`, `TOTUSJH`, `TOTPOT`, `R_VALUE`, and `AREA_ACR`. These metadata can be used to link FITS files with observation records, construct flare labels, filter low-quality samples, or build tabular machine learning features.
 
-```text
-hmi_sharp_720s_20190126.csv
-```
-
-Important columns include:
-
-| Column | Description |
-|---|---|
-| `T_REC` | Record time of the SHARP observation, usually in TAI |
-| `T_OBS` | Observation time |
-| `HARPNUM` | HMI Active Region Patch number |
-| `NOAA_AR` / `NOAA_ARS` | Associated NOAA active region number(s), if available |
-| `QUALITY` | Data quality flag |
-| `USFLUX` | Total unsigned magnetic flux |
-| `TOTUSJH` | Total unsigned current helicity |
-| `TOTUSJZ` | Total unsigned vertical current |
-| `ABSNJZH` | Absolute value of net current helicity |
-| `SAVNCPP` | Sum of absolute net current per polarity |
-| `TOTPOT` | Total photospheric magnetic free energy density |
-| `MEANPOT` | Mean photospheric excess magnetic energy density |
-| `MEANSHR` | Mean shear angle |
-| `SHRGT45` | Area with shear angle greater than 45 degrees |
-| `R_VALUE` | Total unsigned flux around high-gradient polarity inversion lines |
-| `AREA_ACR` | Area of strong-field pixels in the active region |
-| `magnetogram` | JSOC/SUMS path of the corresponding magnetogram FITS segment |
-
-The CSV files can be used as metadata tables for linking magnetogram FITS files with active-region identifiers, observation times, physical magnetic parameters, data-quality flags, and future flare labels.
-
-For tabular machine learning models, users may directly use selected SHARP magnetic parameters from the CSV files. For image-based deep learning models, users may use the FITS magnetogram files as image inputs and use the CSV files for metadata and label matching.
+In short, the FITS files provide the magnetogram images, while the daily CSV files provide the metadata and physical SHARP parameters needed for indexing, filtering, feature analysis, and label construction.
 
 
 
